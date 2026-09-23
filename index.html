@@ -311,8 +311,23 @@
       </footer>
     </div>
   </body>
-  <script>
+  <script type="module">
+    const getCurrentYear = async () => {
+      try {
+        const response = await fetch(
+          "https://timeapi.io/api/Time/current/zone?timeZone=America/Chicago",
+        );
+        const data = await response.json();
+        return data.year;
+      } catch (error) {
+        return new Date().getFullYear();
+      }
+    };
+
+    const year = await getCurrentYear();
+    const copyrightText = `© ${year} Thomas Nguyen. All rights reserved.`;
     const copyrightParagraph = document.querySelector("p.copyright");
-    copyrightParagraph.textContent = `© ${new Date().getFullYear()} Thomas Nguyen. All rights reserved.`;
+
+    copyrightParagraph.textContent = copyrightText;
   </script>
 </html>

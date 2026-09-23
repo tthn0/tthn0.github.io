@@ -6,4 +6,4 @@ This repository contains the source code for my personal portfolio website, curr
 
 ## Screenshot Preview
 
-![Preview](Preview.jpg)
+![Website Screenshot](preview.jpg)
